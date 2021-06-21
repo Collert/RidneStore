@@ -3,61 +3,93 @@
 <html>
     <head>
         <title>Ridne Shop</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <style>
-        :root{
+      :root{
         --background-color: #f5f2f0;
         --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
-    body{
-        background-color: var(--background-color);
+      }
+      main{
+        width: 100%;
+      }
+      @media(max-width: 617px){
+        main{
+          width: 490px;
+        }
+      }
+      body{
+          background-color: var(--background-color);
+          display: grid;
+          grid-template-rows: auto 1fr auto;
+          place-items: center;
+      }
+      header>.title{
+        text-align: center;
+        font-size: 50px;
+        font-family: var(--font);
+        font-weight: bold;
+        margin: 20px;
+      }
+      header{
+        width: 100%;
+      }
+      .head{
         display: grid;
-        grid-template-rows: auto 1fr auto;
-    }
-    header>.title{
-      text-align: center;
-      font-size: 50px;
-      font-family: var(--font);
-      font-weight: bold;
-      margin: 20px;
-    }
-    .head{
-      display: grid;
-      grid-template-columns: minmax(150px, 25%) 1fr;
-      padding-left: 28px;
-      padding-right: 50px;
-    }
-    .left{
-      display: grid; 
-      grid-template-columns: 18% 1fr; 
-      place-items: center start;
-    }
-    .right{
-      display: grid;
-      place-items: center end;
-    }
-    .right>div{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .right>div>a{
-      margin: 5px;
-      flex: 1 1 auto;
-      font-family: var(--font);
-      font-size: 20px;
-      color: black;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    .collection{
-      width: 100%;
-      display: grid;
-      place-items: center;
-    }
-    .collection>*{
-      /*max-width: 350px;*/
-    }
+        grid-template-columns: minmax(150px, 25%) 1fr;
+        padding-left: 28px;
+        padding-right: 50px;
+      }
+      .left{
+        display: grid; 
+        grid-template-columns: minmax(40px, 18%) 1fr; 
+        place-items: center start;
+      }
+      .right{
+        display: grid;
+        place-items: center end;
+      }
+      @media(max-width: 750px){
+        .head{
+          grid-template-rows: auto auto;
+          grid-template-columns: none;
+        }
+        .left{
+          width: 100%;
+          place-items: center;
+          grid-template-columns: auto auto;
+        }
+        .left>a{
+          width: 100%;
+          display: grid;
+          place-items: center end;
+        }
+        .left>span{
+          width: 100%;
+          display: grid;
+          place-items: center start;
+        }
+        .right{
+          place-items: center;
+        }
+      }
+      .right>div>a{
+        margin: 5px;
+        flex: 1 1 auto;
+        font-family: var(--font);
+        font-size: 20px;
+        color: black;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      .collection{
+        width: 100%;
+        display: grid;
+        place-items: center;
+      }
+      .collection>*{
+        /*max-width: 350px;*/
+      }
     </style>
     <body>
       <header>
