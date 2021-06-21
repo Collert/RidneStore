@@ -2,7 +2,7 @@
 
 <html>
     <head>
-        
+        <title>Ridne Shop</title>
     </head>
     <style>
         :root{
@@ -11,8 +11,10 @@
     }
     body{
         background-color: var(--background-color);
+        display: grid;
+        grid-template-rows: auto 1fr auto;
     }
-    header{
+    header>.title{
       text-align: center;
       font-size: 50px;
       font-family: var(--font);
@@ -21,36 +23,62 @@
     }
     .head{
       display: grid;
-      grid-template-columns: 25% 1fr;
+      grid-template-columns: minmax(150px, 25%) 1fr;
       padding-left: 28px;
       padding-right: 50px;
+    }
+    .left{
+      display: grid; 
+      grid-template-columns: 18% 1fr; 
+      place-items: center start;
     }
     .right{
       display: grid;
       place-items: center end;
     }
-    .right>a{
+    .right>div{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .right>div>a{
+      margin: 5px;
+      flex: 1 1 auto;
       font-family: var(--font);
       font-size: 20px;
       color: black;
       font-weight: bold;
       text-decoration: none;
     }
+    .collection{
+      width: 100%;
+      display: grid;
+      place-items: center;
+    }
+    .collection>*{
+      /*max-width: 350px;*/
+    }
     </style>
     <body>
-      <div class="head">
-        <div style="display: grid; grid-template-columns: 18% auto; place-items: center start;">
-          <img style="max-width: 40px;" src="https://lh6.googleusercontent.com/bBgi_JTwcgC8eudvmEg41mTfxRd2fd5i7o-nzHwpfDG_MSOGrp0L8_4NuSrApW3jXvsCgNnCAyQJ4DP4eZEltNg=w16383">
-          <span style="font-family: var(--font); font-size: 20px;">Ridne Slovo</span>
-        </div>
-        <div class="right">
-          <a href="https://en.ridneslovo.ca/">Back to website</a>
-        </div>
-      </div>
       <header>
-        Ridne Shop
+        <div class="head">
+          <div class="left">
+            <a href="https://en.ridneslovo.ca/"><img style="max-width: 40px;" src="https://drive.google.com/uc?id=1J4Wa1fvTESJf1X7S3XDSQ_kxAL8A84g6"></a>
+            <span style="font-family: var(--font); font-size: 20px;">Ridne Slovo</span>
+          </div>
+          <div class="right">
+            <div>
+              <a href="https://en.ridneslovo.ca/">Back to website</a>
+              <a href="https://en.ridneslovo.ca/">Back to website</a>
+            </div>
+          </div>
+        </div>
+        <div class="title">
+          Ridne Shop
+        </div>
       </header>
-        <div name="featured" id='collection-component-1622695616541'></div>
+      <main>
+      <div class="collection"><div name="featured" id='collection-component-1622695616541'></div></div>
 <script type="text/javascript">
 /*<![CDATA[*/
 (function () {
@@ -258,5 +286,9 @@
 })();
 /*]]>*/
 </script>
+</main>
+<footer>
+
+</footer>
     </body>
 </html>
